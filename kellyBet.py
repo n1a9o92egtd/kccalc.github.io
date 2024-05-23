@@ -14,11 +14,11 @@ def main():
 
     bet = 1.0
     counter = 0
-    txt = "<tr style=\"background: #f8fadb;\"><td style=\"text-align: center; vertical-align: center; padding: 8px;\">{counter:.2f}</td><th style=\"text-align: center; vertical-align: center; font-weight: bold; padding: 4px;\">{bankRoll:.2f}</th><td style=\"text-align: center; vertical-align: center; padding: 8px;\">{betThisMuch:.2f}</td></tr>"
+    txt = "<tr style=\"background: #f8fadb;\"><td style=\"text-align: center; vertical-align: center; padding: 8px;\">{counter:d}</td><th style=\"text-align: center; vertical-align: center; font-weight: bold; padding: 4px;\">{bankRoll:.2f}</th><td style=\"text-align: center; vertical-align: center; padding: 8px;\">{betThisMuch:.2f}</td><td style=\"text-align: center; vertical-align: center; padding: 8px;\">{kc:.4f}</td></tr>"
     while bet != 0.0:
         kc, bet = kelly_bet(prob, odds, bankroll, reduce_volitility)
 
-        print(txt.format(counter = counter, bankRoll = bankroll, betThisMuch = bet))
+        print(txt.format(counter = counter, bankRoll = bankroll, betThisMuch = bet, kc = kc))
         # print('counter:%.f' % counter)
         # print('Kelly Criterion (Adjusted): %.4f' % kc)
         # print('Bet This Much (Adjusted): %.2f\n' % bet)
